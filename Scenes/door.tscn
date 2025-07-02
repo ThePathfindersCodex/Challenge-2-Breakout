@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=3 uid="uid://7c1aa0bec27e"]
+
+[ext_resource type="Script" uid="uid://wo2xfxn2s7s1" path="res://Scripts/door.gd" id="1_fahql"]
+[ext_resource type="Shader" uid="uid://bwoj1vuij7438" path="res://shaders/door.gdshader" id="2_a43ba"]
+[ext_resource type="Texture2D" uid="uid://edy4qpbya6nc" path="res://Sprites/triple powerup.png" id="3_a43ba"]
+[ext_resource type="Shader" uid="uid://d2upca68xxqab" path="res://shaders/door_lock.gdshader" id="4_ab4ky"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fahql"]
+resource_local_to_scene = true
+shader = ExtResource("2_a43ba")
+shader_parameter/state = 1
+shader_parameter/strength = 0.5
+shader_parameter/speed = 0.5
+shader_parameter/angle = 37.674
+shader_parameter/band_count = 6
+shader_parameter/color1 = Color(1, 1, 0, 1)
+shader_parameter/color2 = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fahql"]
+load_path = "res://.godot/imported/border.png-cbd1fefbc64f0bb4932e635cd093da8d.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o1l4"]
+size = Vector2(104, 26)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a43ba"]
+shader = ExtResource("4_ab4ky")
+shader_parameter/active = false
+shader_parameter/lock_color = Color(1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_burcv"]
+load_path = "res://.godot/imported/Ball.png-4e6e58f62343d577c3d22d908457c6a4.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kj2pw"]
+shader = ExtResource("4_ab4ky")
+shader_parameter/active = false
+shader_parameter/lock_color = Color(0, 0.392157, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8c32u"]
+load_path = "res://.godot/imported/Ball.png-4e6e58f62343d577c3d22d908457c6a4.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ab4ky"]
+shader = ExtResource("4_ab4ky")
+shader_parameter/active = false
+shader_parameter/lock_color = Color(1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ovubi"]
+load_path = "res://.godot/imported/Ball.png-4e6e58f62343d577c3d22d908457c6a4.ctex"
+
+[node name="Door" type="StaticBody2D" groups=["door"]]
+script = ExtResource("1_fahql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fahql")
+position = Vector2(-1, 0)
+scale = Vector2(0.47, 0.11)
+texture = SubResource("CompressedTexture2D_fahql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8o1l4")
+
+[node name="Powerup" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_a43ba")
+
+[node name="Sprite2DLock1" type="Sprite2D" parent="." groups=["lock"]]
+visible = false
+material = SubResource("ShaderMaterial_a43ba")
+position = Vector2(-32, 2)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("CompressedTexture2D_burcv")
+
+[node name="Sprite2DLock2" type="Sprite2D" parent="." groups=["lock"]]
+visible = false
+material = SubResource("ShaderMaterial_kj2pw")
+position = Vector2(0, 2)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("CompressedTexture2D_8c32u")
+
+[node name="Sprite2DLock3" type="Sprite2D" parent="." groups=["lock"]]
+visible = false
+material = SubResource("ShaderMaterial_ab4ky")
+position = Vector2(32, 2)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("CompressedTexture2D_ovubi")

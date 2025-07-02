@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://blrpgsr8yh6db"]
+
+[ext_resource type="Script" uid="uid://cbqg6w5sxb8ki" path="res://Scripts/main menu.gd" id="1_28flt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hlgxo"]
+font_size = 100
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main Menu" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.992157, 0.941176, 0.839216, 1)
+script = ExtResource("1_28flt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Brickvania"
+label_settings = SubResource("LabelSettings_hlgxo")
+horizontal_alignment = 1
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+
+[node name="Level Select" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Level Select"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Quit"

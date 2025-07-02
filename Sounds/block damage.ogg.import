@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cv2n4ql1kfe1h"
+path="res://.godot/imported/block damage.ogg-46d8e823a6fc9eaacc20497e4a4b4116.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/block damage.ogg"
+dest_files=["res://.godot/imported/block damage.ogg-46d8e823a6fc9eaacc20497e4a4b4116.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

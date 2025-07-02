@@ -1,0 +1,153 @@
+[gd_scene load_steps=7 format=3 uid="uid://fmsykcun1kaj"]
+
+[ext_resource type="Script" uid="uid://ybg62ubgnipt" path="res://Scripts/GameController.gd" id="1_8ffim"]
+[ext_resource type="PackedScene" uid="uid://lacicg4gj5xt" path="res://Scenes/paddle.tscn" id="1_vk57k"]
+[ext_resource type="PackedScene" uid="uid://x4k02i1lj1e" path="res://Scenes/killzone.tscn" id="3_xfk5q"]
+[ext_resource type="Script" uid="uid://do1m54t5yph2c" path="res://Scripts/blockManager.gd" id="4_6444e"]
+[ext_resource type="PackedScene" uid="uid://bfpmoeoe0288i" path="res://Scenes/block.tscn" id="5_evi0p"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vk57k"]
+
+[node name="level 1" type="Node2D"]
+script = ExtResource("1_8ffim")
+
+[node name="paddle" parent="." instance=ExtResource("1_vk57k")]
+position = Vector2(356, 800)
+
+[node name="Ball Pool" type="Node" parent="." groups=["ball pool"]]
+
+[node name="Upgrade Pool" type="Node" parent="." groups=["upgrade pool"]]
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 407)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_vk57k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(354, 0)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_vk57k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(722, 397)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_vk57k")
+
+[node name="Killzone" parent="." instance=ExtResource("3_xfk5q")]
+position = Vector2(358, 863)
+
+[node name="Block Manager" type="Node" parent="."]
+script = ExtResource("4_6444e")
+
+[node name="Block0" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(66.8571, 31.3571)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block1" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(66.8571, 78.9286)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block2" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(66.8571, 126.5)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block3" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(66.8571, 174.071)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block4" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(66.8571, 221.643)
+scale = Vector2(1.28571, 1.28571)
+upgradeType = 2
+
+[node name="Block5" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(213.429, 31.3571)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block6" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(213.429, 78.9286)
+scale = Vector2(1.28571, 1.28571)
+health = 2
+
+[node name="Block7" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(213.429, 126.5)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block8" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(213.429, 174.071)
+scale = Vector2(1.28571, 1.28571)
+health = 2
+
+[node name="Block9" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(213.429, 221.643)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block10" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(360, 31.3571)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block11" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(360, 78.9286)
+scale = Vector2(1.28571, 1.28571)
+health = 2
+
+[node name="Block12" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(360, 126.5)
+scale = Vector2(1.28571, 1.28571)
+health = 2
+upgradeType = 1
+
+[node name="Block13" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(360, 174.071)
+scale = Vector2(1.28571, 1.28571)
+health = 2
+
+[node name="Block14" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(360, 221.643)
+scale = Vector2(1.28571, 1.28571)
+upgradeType = 4
+
+[node name="Block15" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(506.571, 31.3571)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block16" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(506.571, 78.9286)
+scale = Vector2(1.28571, 1.28571)
+health = 2
+
+[node name="Block17" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(506.571, 126.5)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block18" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(506.571, 174.071)
+scale = Vector2(1.28571, 1.28571)
+health = 2
+
+[node name="Block19" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(506.571, 221.643)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block20" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(653.143, 31.3571)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block21" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(653.143, 78.9286)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block22" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(653.143, 126.5)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block23" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(653.143, 174.071)
+scale = Vector2(1.28571, 1.28571)
+
+[node name="Block24" parent="Block Manager" instance=ExtResource("5_evi0p")]
+position = Vector2(653.143, 221.643)
+scale = Vector2(1.28571, 1.28571)
+upgradeType = 3

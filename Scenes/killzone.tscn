@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://x4k02i1lj1e"]
+
+[ext_resource type="Script" uid="uid://cptbvokswiq6x" path="res://Scripts/killzone.gd" id="1_jvagm"]
+[ext_resource type="Shader" uid="uid://mcyyu8x7v2vi" path="res://shaders/killzone.gdshader" id="2_iyfga"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rli2t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ca4vh"]
+shader = ExtResource("2_iyfga")
+shader_parameter/fireMovement = Vector2(-0.01, 0.5)
+shader_parameter/distortionMovement = Vector2(-0.01, 0.3)
+shader_parameter/normalStrength = 40.0
+shader_parameter/distortionStrength = 2.865
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_on6up"]
+size = Vector2(750, 20)
+
+[node name="Killzone" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_jvagm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_rli2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ca4vh")
+position = Vector2(0, 2)
+texture = SubResource("PlaceholderTexture2D_on6up")

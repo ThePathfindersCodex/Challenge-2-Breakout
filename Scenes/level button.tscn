@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://xokmaxbg2o7"]
+
+[ext_resource type="ButtonGroup" uid="uid://crft2wbfyooxl" path="res://Sources/Level button group.tres" id="1_wt0hn"]
+
+[node name="Level Button" type="Button"]
+custom_minimum_size = Vector2(100.06, 100)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 50
+button_group = ExtResource("1_wt0hn")
+text = "1"

@@ -1,0 +1,256 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlve0fk56qles"]
+
+[ext_resource type="Script" uid="uid://ybg62ubgnipt" path="res://Scripts/GameController.gd" id="1_svysd"]
+[ext_resource type="PackedScene" uid="uid://lacicg4gj5xt" path="res://Scenes/paddle.tscn" id="2_ghd1v"]
+[ext_resource type="PackedScene" uid="uid://x4k02i1lj1e" path="res://Scenes/killzone.tscn" id="3_fd5q4"]
+[ext_resource type="Script" uid="uid://do1m54t5yph2c" path="res://Scripts/blockManager.gd" id="4_kclml"]
+[ext_resource type="PackedScene" uid="uid://bfpmoeoe0288i" path="res://Scenes/block.tscn" id="5_843ij"]
+[ext_resource type="PackedScene" uid="uid://7c1aa0bec27e" path="res://Scenes/door.tscn" id="6_hsrow"]
+[ext_resource type="PackedScene" uid="uid://buinsl183a818" path="res://Scenes/sidebar.tscn" id="7_bewyw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vk57k"]
+
+[node name="level 1" type="Node2D"]
+script = ExtResource("1_svysd")
+
+[node name="paddle" parent="." instance=ExtResource("2_ghd1v")]
+position = Vector2(356, 800)
+
+[node name="Ball Pool" type="Node" parent="." groups=["ball pool"]]
+
+[node name="Upgrade Pool" type="Node" parent="." groups=["upgrade pool"]]
+
+[node name="Walls" type="StaticBody2D" parent="." groups=["wall"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 407)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_vk57k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(354, 0)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_vk57k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(722, 397)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_vk57k")
+
+[node name="Killzone" parent="." instance=ExtResource("3_fd5q4")]
+position = Vector2(358, 863)
+
+[node name="Block Manager" type="Node" parent="."]
+script = ExtResource("4_kclml")
+xPadding = 5.0
+yPadding = 5.0
+numberOfCollumns = 12
+numberOfRows = 18
+
+[node name="Block57" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 85.1972)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block59" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 99.8074)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block61" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 131.417)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block63" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 162.028)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block64" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 213.833)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block66" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 244.443)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block68" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 276.053)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block70" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 306.663)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block71" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 321.468)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block75" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(309.527, 72.1972)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block89" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(309.527, 321.468)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block129" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(397.473, 72.1972)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block143" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(398.473, 321.468)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block147" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 85.1972)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block149" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 99.8074)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block151" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 131.417)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block60" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 114.807)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block62" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 146.417)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block150" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 114.807)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block152" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 146.417)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block153" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 162.028)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block154" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 213.833)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block156" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 244.443)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block158" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 276.053)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block67" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 228.443)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block69" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(226.879, 260.053)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block157" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 228.443)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block159" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 260.053)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block160" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 306.663)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block161" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(480.121, 321.468)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block108" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(309.176, 306.468)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block126" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(398.824, 306.468)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block109" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(309.176, 87.4682)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block127" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(397.824, 87.4682)
+scale = Vector2(0.556408, 0.556408)
+health = 0
+
+[node name="Block" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(360, 188)
+upgradeType = 16
+
+[node name="Door Manager" type="Node" parent="."]
+
+[node name="Door2" parent="Door Manager" instance=ExtResource("6_hsrow")]
+position = Vector2(0, 405)
+rotation = -1.5708
+state = 2
+destination_level = 20
+
+[node name="Door3" parent="Door Manager" instance=ExtResource("6_hsrow")]
+position = Vector2(722, 405)
+rotation = 1.5708
+state = 0
+
+[node name="Door" parent="Door Manager" instance=ExtResource("6_hsrow")]
+position = Vector2(359, 862)
+rotation = -3.14159
+state = 0
+
+[node name="Door4" parent="Door Manager" instance=ExtResource("6_hsrow")]
+position = Vector2(359, 0)
+state = 0
+
+[node name="Sidebar" parent="." instance=ExtResource("7_bewyw")]
+
+[node name="LabelHint" type="Label" parent="."]
+z_index = 1
+offset_left = 139.0
+offset_top = 501.0
+offset_right = 604.0
+offset_bottom = 536.0
+theme_override_font_sizes/font_size = 25
+text = "HINT MESSAGE"
+horizontal_alignment = 1

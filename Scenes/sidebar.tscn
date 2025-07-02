@@ -1,0 +1,181 @@
+[gd_scene load_steps=15 format=3 uid="uid://buinsl183a818"]
+
+[ext_resource type="Texture2D" uid="uid://y127uvos42s6" path="res://Sprites/Ball.png" id="1_7imvy"]
+[ext_resource type="Script" uid="uid://uc1q015p6ihu" path="res://Scripts/sidebar.gd" id="1_pw8v1"]
+[ext_resource type="Texture2D" uid="uid://bu0sq847jo55x" path="res://Sprites/powerball powerup.png" id="4_sd4ji"]
+[ext_resource type="Shader" uid="uid://d0o53i5apufs" path="res://shaders/map.gdshader" id="4_wmew1"]
+[ext_resource type="Texture2D" uid="uid://bgwiio7f2q8p" path="res://Sprites/phaseball powerup.png" id="5_uaugi"]
+[ext_resource type="Texture2D" uid="uid://ceg5tk6uatqse" path="res://Sprites/buster powerup.png" id="6_fn8q4"]
+[ext_resource type="Shader" uid="uid://c0telc8p866c7" path="res://shaders/xp_rank.gdshader" id="6_uaugi"]
+[ext_resource type="Shader" uid="uid://cmxhar3hujn3" path="res://shaders/equipslot.gdshader" id="8_h67gg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fn8q4"]
+shader = ExtResource("6_uaugi")
+shader_parameter/current_xp = 0
+shader_parameter/xp_for_rank_1 = 100
+shader_parameter/xp_for_rank_2 = 200
+shader_parameter/xp_for_rank_3 = 400
+shader_parameter/xp_for_rank_4 = 800
+shader_parameter/fill_color = Color(0.2, 0.8, 0.2, 1)
+shader_parameter/empty_color = Color(0.1, 0.1, 0.5, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h67gg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sd4ji"]
+shader = ExtResource("4_wmew1")
+shader_parameter/map = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/visited = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/rows = 18
+shader_parameter/cols = 12
+shader_parameter/currentLevel = 1
+shader_parameter/padding = 2
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wmew1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shgwv"]
+shader = ExtResource("8_h67gg")
+shader_parameter/cooldown_progress = 100
+shader_parameter/active_color = Vector4(0.2, 0.7, 0.2, 1)
+shader_parameter/cooldown_color = Vector4(0.7, 0.2, 0.2, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_shgwv"]
+
+[node name="Sidebar" type="ColorRect"]
+z_index = 1
+offset_left = 724.0
+offset_top = 1.0
+offset_right = 863.0
+offset_bottom = 864.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_pw8v1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 130.0
+offset_bottom = 414.0
+
+[node name="LabelHealth" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Health"
+
+[node name="HBoxContainerHealth" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Life1" type="TextureRect" parent="VBoxContainer/HBoxContainerHealth"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_7imvy")
+
+[node name="Life2" type="TextureRect" parent="VBoxContainer/HBoxContainerHealth"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_7imvy")
+
+[node name="Life3" type="TextureRect" parent="VBoxContainer/HBoxContainerHealth"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_7imvy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CurrentXP" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rank 0  XP: 0000"
+
+[node name="XPRank" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_fn8q4")
+custom_minimum_size = Vector2(125, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("PlaceholderTexture2D_h67gg")
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RoomNumber" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Room #"
+
+[node name="Map" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_sd4ji")
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("PlaceholderTexture2D_wmew1")
+
+[node name="LabelKeys" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Keys"
+
+[node name="HBoxContainerKeys" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Key1" type="TextureRect" parent="VBoxContainer/HBoxContainerKeys"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_7imvy")
+
+[node name="Key2" type="TextureRect" parent="VBoxContainer/HBoxContainerKeys"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_7imvy")
+
+[node name="Key3" type="TextureRect" parent="VBoxContainer/HBoxContainerKeys"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_7imvy")
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LabelUpgrades" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Upgrades"
+
+[node name="HBoxContainerUpgrades" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="UpgradePowerball" type="TextureRect" parent="VBoxContainer/HBoxContainerUpgrades"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("4_sd4ji")
+
+[node name="UpgradePhaseball" type="TextureRect" parent="VBoxContainer/HBoxContainerUpgrades"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_uaugi")
+
+[node name="UpgradeDoorBusterball" type="TextureRect" parent="VBoxContainer/HBoxContainerUpgrades"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("6_fn8q4")
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EquipmentSlot" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_shgwv")
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("PlaceholderTexture2D_shgwv")
+
+[node name="LabelActivateEquipment" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Press Q"
+horizontal_alignment = 1

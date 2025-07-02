@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfpmoeoe0288i"]
+
+[ext_resource type="Script" uid="uid://bt0voyptlci0y" path="res://Scripts/block.gd" id="1_8o1l4"]
+[ext_resource type="Texture2D" uid="uid://l32lm3tysuag" path="res://Sprites/block.png" id="1_ejx3s"]
+[ext_resource type="Texture2D" uid="uid://edy4qpbya6nc" path="res://Sprites/triple powerup.png" id="3_c2iur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o1l4"]
+size = Vector2(104, 26)
+
+[node name="Block" type="StaticBody2D" groups=["block"]]
+script = ExtResource("1_8o1l4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.4, 0.4, 1)
+texture = ExtResource("1_ejx3s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_8o1l4")
+
+[node name="Powerup" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_c2iur")
+
+[node name="Sprite2DTunnel" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 0.796078)
+scale = Vector2(0.905, 0.61)
+texture = ExtResource("1_ejx3s")

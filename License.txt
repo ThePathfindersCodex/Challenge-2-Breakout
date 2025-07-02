@@ -1,0 +1,2 @@
+MIT License
+https://godotshaders.com/shader/fire-effect/

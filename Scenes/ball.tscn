@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://tysthtkihxwl"]
+
+[ext_resource type="Script" uid="uid://b55gtsobih6bh" path="res://Scripts/ball.gd" id="1_ij5cq"]
+[ext_resource type="Texture2D" uid="uid://y127uvos42s6" path="res://Sprites/Ball.png" id="2_376qj"]
+[ext_resource type="Texture2D" uid="uid://bu0sq847jo55x" path="res://Sprites/powerball powerup.png" id="3_yk4cr"]
+[ext_resource type="Texture2D" uid="uid://bgwiio7f2q8p" path="res://Sprites/phaseball powerup.png" id="4_aw2wy"]
+[ext_resource type="Texture2D" uid="uid://ceg5tk6uatqse" path="res://Sprites/buster powerup.png" id="5_aw2wy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yk4cr"]
+radius = 20.0998
+
+[node name="Ball" type="CharacterBody2D" groups=["ball"]]
+collision_layer = 2
+script = ExtResource("1_ij5cq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_376qj")
+
+[node name="Sprite2DPowerBall" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.211765)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_yk4cr")
+
+[node name="Sprite2DPhaseBall" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.211765)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_aw2wy")
+region_enabled = true
+region_rect = Rect2(0, 0, 73, 73)
+
+[node name="Sprite2DDoorBusterBall" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 0, 0, 0.211765)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_aw2wy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_yk4cr")

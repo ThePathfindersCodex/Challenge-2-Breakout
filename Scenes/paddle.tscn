@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://lacicg4gj5xt"]
+
+[ext_resource type="Script" uid="uid://bguiovvgd30kl" path="res://Scripts/paddle.gd" id="1_krcey"]
+[ext_resource type="Texture2D" uid="uid://ccd6oq0bioaj0" path="res://Sprites/Paddle.png" id="1_nxw3c"]
+[ext_resource type="PackedScene" uid="uid://bmloafm7mn1o2" path="res://Scenes/Aiming Line.tscn" id="3_fe6ia"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_krcey"]
+radius = 16.0
+height = 162.0
+
+[node name="paddle" type="CharacterBody2D" groups=["paddle"]]
+script = ExtResource("1_krcey")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nxw3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_krcey")
+
+[node name="Aiming Line" parent="." instance=ExtResource("3_fe6ia")]

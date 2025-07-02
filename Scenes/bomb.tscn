@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://db1e3qh4c7cb3"]
+
+[ext_resource type="Texture2D" uid="uid://bynng8cl12ow0" path="res://Sprites/dropbomb powerup.png" id="1_yx723"]
+[ext_resource type="Script" uid="uid://6rba7vy0yttk" path="res://Scripts/bomb.gd" id="2_kdyat"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdyat"]
+radius = 77.3175
+
+[node name="Bomb" type="Area2D"]
+script = ExtResource("2_kdyat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kdyat")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yx723")
