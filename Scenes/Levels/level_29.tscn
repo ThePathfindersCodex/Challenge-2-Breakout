@@ -49,6 +49,7 @@ numberOfRows = 8
 [node name="Block0" parent="Block Manager" instance=ExtResource("5_s4wn7")]
 position = Vector2(69.8148, 22.713)
 scale = Vector2(1.34259, 1.34259)
+health = -5
 
 [node name="Block1" parent="Block Manager" instance=ExtResource("5_s4wn7")]
 position = Vector2(69.8148, 65.6759)
@@ -62,7 +63,6 @@ upgradeType = 1
 [node name="Block3" parent="Block Manager" instance=ExtResource("5_s4wn7")]
 position = Vector2(69.8148, 151.602)
 scale = Vector2(1.34259, 1.34259)
-upgradeType = 1
 
 [node name="Block4" parent="Block Manager" instance=ExtResource("5_s4wn7")]
 position = Vector2(69.8148, 194.565)
@@ -203,6 +203,7 @@ upgradeType = 3
 [node name="Block32" parent="Block Manager" instance=ExtResource("5_s4wn7")]
 position = Vector2(655.185, 22.713)
 scale = Vector2(1.34259, 1.34259)
+health = -5
 
 [node name="Block33" parent="Block Manager" instance=ExtResource("5_s4wn7")]
 position = Vector2(655.185, 65.6759)
@@ -216,7 +217,6 @@ upgradeType = 1
 [node name="Block35" parent="Block Manager" instance=ExtResource("5_s4wn7")]
 position = Vector2(655.185, 151.602)
 scale = Vector2(1.34259, 1.34259)
-upgradeType = 1
 
 [node name="Block36" parent="Block Manager" instance=ExtResource("5_s4wn7")]
 position = Vector2(655.185, 194.565)

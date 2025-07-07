@@ -106,7 +106,6 @@ health = -2
 position = Vector2(621.13, 401.985)
 scale = Vector2(1.64885, 1.64885)
 health = -2
-upgradeType = 11
 
 [node name="Block18" parent="Block Manager" instance=ExtResource("5_51crm")]
 position = Vector2(621.13, 448.153)

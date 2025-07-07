@@ -12,10 +12,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fn8q4"]
 shader = ExtResource("6_uaugi")
 shader_parameter/current_xp = 0
-shader_parameter/xp_for_rank_1 = 100
-shader_parameter/xp_for_rank_2 = 200
-shader_parameter/xp_for_rank_3 = 400
-shader_parameter/xp_for_rank_4 = 800
+shader_parameter/xp_for_rank_1 = 2
+shader_parameter/xp_for_rank_2 = 4
+shader_parameter/xp_for_rank_3 = 10
+shader_parameter/xp_for_rank_4 = 20
 shader_parameter/fill_color = Color(0.2, 0.8, 0.2, 1)
 shader_parameter/empty_color = Color(0.1, 0.1, 0.5, 1)
 

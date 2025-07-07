@@ -48,7 +48,6 @@ yPadding = 15.0
 [node name="Block0" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(65, 39.75)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block1" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(65, 92.25)
@@ -58,7 +57,6 @@ upgradeType = 3
 [node name="Block2" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(65, 144.75)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block3" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(65, 197.25)
@@ -78,12 +76,10 @@ upgradeType = 3
 [node name="Block6" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(213.75, 92.25)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block7" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(213.75, 144.75)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block8" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(213.75, 197.25)
@@ -93,13 +89,11 @@ upgradeType = 3
 [node name="Block9" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(213.75, 249.75)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block10" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(362.5, 39.75)
 scale = Vector2(1.25, 1.25)
 health = 3
-upgradeType = 11
 
 [node name="Block11" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(362.5, 92.25)
@@ -109,7 +103,6 @@ upgradeType = 17
 [node name="Block12" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(362.5, 144.75)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block13" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(362.5, 197.25)
@@ -130,12 +123,10 @@ upgradeType = 3
 [node name="Block16" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(511.25, 92.25)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block17" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(511.25, 144.75)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block18" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(511.25, 197.25)
@@ -145,12 +136,10 @@ upgradeType = 3
 [node name="Block19" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(511.25, 249.75)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block20" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(660, 39.75)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block21" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(660, 92.25)
@@ -160,7 +149,6 @@ upgradeType = 3
 [node name="Block22" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(660, 144.75)
 scale = Vector2(1.25, 1.25)
-upgradeType = 3
 
 [node name="Block23" parent="Block Manager" instance=ExtResource("5_q8s01")]
 position = Vector2(660, 197.25)

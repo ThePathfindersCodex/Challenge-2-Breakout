@@ -78,86 +78,90 @@ func blocks():
 
 func cannot_equip():
 	gameController.floatingRisingText("Cannot Equip Yet",Vector2(240,400),2.5,2)
-	#print("NOPE - cant use it yet")
 
 func equipSplitball():
-	if Global.equip_slot1_enabled==true:
+	if Global.equip_slot1_enabled && Global.equip_slot1!=Global.powerup_type.SPLITBALL:
 		Global.equip_slot1=Global.powerup_type.SPLITBALL
 		get_tree().call_group("paddle","equip_splitball")
 		gameController.call_deferred("updateSidebar")
 		gameController.floatingRisingText("Item Equipped!\n\nSPLIT BALL",Vector2(180,400),3.5,3)
-	else:
+	elif !Global.equip_slot1_enabled:
 		cannot_equip()
 
 func equipDropBomb():
-	if Global.equip_slot1_enabled==true:
+	if Global.equip_slot1_enabled && Global.equip_slot1!=Global.powerup_type.DROP_BOMB:
 		Global.equip_slot1=Global.powerup_type.DROP_BOMB
 		get_tree().call_group("paddle","equip_dropbomb")
 		gameController.call_deferred("updateSidebar")
 		gameController.floatingRisingText("Item Equipped!\n\nBOMB BALL",Vector2(180,400),3.5,3)
-	else:
+	elif !Global.equip_slot1_enabled:
 		cannot_equip()
 
 func equipMicroBall():
-	if Global.equip_slot1_enabled==true:
+	if Global.equip_slot1_enabled && Global.equip_slot1!=Global.powerup_type.MICROBALL:
 		Global.equip_slot1=Global.powerup_type.MICROBALL
 		get_tree().call_group("paddle","equip_microball")
 		gameController.call_deferred("updateSidebar")
 		gameController.floatingRisingText("Item Equipped!\n\nSHRINK BALL",Vector2(180,400),3.5,3)
-	else:
+	elif !Global.equip_slot1_enabled:
 		cannot_equip()
 
 func equipHyperBall():
-	if Global.equip_slot1_enabled==true:
+	if Global.equip_slot1_enabled && Global.equip_slot1!=Global.powerup_type.HYPERBALL:
 		Global.equip_slot1=Global.powerup_type.HYPERBALL
 		get_tree().call_group("paddle","equip_hyperball")
 		gameController.call_deferred("updateSidebar")
 		gameController.floatingRisingText("Item Equipped!\n\nHYPER BALL",Vector2(180,400),3.5,3)
-	else:
+	elif !Global.equip_slot1_enabled:
 		cannot_equip()
 		
 func equipTunnelBall():
-	if Global.equip_slot1_enabled==true:
+	if Global.equip_slot1_enabled && Global.equip_slot1!=Global.powerup_type.TUNNELBALL:
 		Global.equip_slot1=Global.powerup_type.TUNNELBALL
 		get_tree().call_group("paddle","equip_tunnelball")
 		gameController.call_deferred("updateSidebar")
 		gameController.floatingRisingText("Item Equipped!\n\nTUNNEL BALL",Vector2(180,400),3.5,3)
-	else:
+	elif !Global.equip_slot1_enabled:
 		cannot_equip()
 		
 func equipMagnetBall():
-	if Global.equip_slot1_enabled==true:
+	if Global.equip_slot1_enabled && Global.equip_slot1!=Global.powerup_type.MAGNETBALL:
 		Global.equip_slot1=Global.powerup_type.MAGNETBALL
 		get_tree().call_group("paddle","equip_magnetball")
 		gameController.call_deferred("updateSidebar")
 		gameController.floatingRisingText("Item Equipped!\n\nMAGNET BALL",Vector2(180,400),3.5,3)
-	else:
+	elif !Global.equip_slot1_enabled:
 		cannot_equip()
 
 func powerBall():
-	Global.powerup_powerball=true
-	get_tree().call_group("ball","enable_powerball")
+	if !Global.powerup_doorbusterball:
+		Global.powerup_powerball=true
+		get_tree().call_group("ball","enable_powerball")
+		gameController.floatingRisingText("Upgrade Installed!\n\nPOWER BALL",Vector2(180,400),3.5,3)
 	gameController.call_deferred("updateSidebar")
-	gameController.floatingRisingText("Upgrade Installed!\n\nPOWER BALL",Vector2(180,400),3.5,3)
+	
 	
 func doorBusterBall():
-	Global.powerup_doorbusterball=true
-	get_tree().call_group("ball","enable_powerup_doorbusterball")
+	if !Global.powerup_doorbusterball:
+		Global.powerup_doorbusterball=true
+		get_tree().call_group("ball","enable_powerup_doorbusterball")
+		gameController.floatingRisingText("Upgrade Installed!\n\nBUSTER BALL",Vector2(180,400),3.5,3)
 	gameController.call_deferred("updateSidebar")
-	gameController.floatingRisingText("Upgrade Installed!\n\nBUSTER BALL",Vector2(180,400),3.5,3)
 
 func phaseBall():
-	Global.powerup_phaseball=true
-	get_tree().call_group("ball","enable_phaseball")
-	gameController.call_deferred("checkBlockColliders")
+	if !Global.powerup_phaseball:
+		Global.powerup_phaseball=true
+		get_tree().call_group("ball","enable_phaseball")
+		gameController.call_deferred("checkBlockColliders")
+		gameController.floatingRisingText("Upgrade Installed!\n\nPHASE BALL",Vector2(180,400),3.5,3)
 	gameController.call_deferred("updateSidebar")
-	gameController.floatingRisingText("Upgrade Installed!\n\nPHASE BALL",Vector2(180,400),3.5,3)
-
+	
 func obtainKey():
-	Global.key_counter += 1
-	get_tree().call_group("door","update_locks")
+	if Global.key_counter<3:
+		Global.key_counter += 1
+		get_tree().call_group("door","update_locks")
+		gameController.floatingRisingText("Key Obtained!",Vector2(180,400),3.5,3)
 	gameController.call_deferred("updateSidebar")
-	gameController.floatingRisingText("Key Obtained!",Vector2(180,400),3.5,3)
 	
 func obtainHeart():
 	if Global.lives_remaining<3:

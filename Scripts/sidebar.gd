@@ -92,6 +92,10 @@ func updateSidebar():
 	# update xp and rank
 	%CurrentXP.text = "Rank "+str(Global.xp_rank)+"  XP: "+str(Global.xp_points)
 	%XPRank.material.set_shader_parameter("current_xp", Global.xp_points)
+	%XPRank.material.set_shader_parameter("xp_for_rank_1", Global.xp_points_rank_1)
+	%XPRank.material.set_shader_parameter("xp_for_rank_2", Global.xp_points_rank_2)
+	%XPRank.material.set_shader_parameter("xp_for_rank_3", Global.xp_points_rank_3)
+	%XPRank.material.set_shader_parameter("xp_for_rank_4", Global.xp_points_rank_4)
 
 	# update equipment activation slot
 	if Global.equip_slot1_enabled:

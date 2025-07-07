@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5mqvc2fpovdi"]
+
+[ext_resource type="Script" uid="uid://ybg62ubgnipt" path="res://Scripts/GameController.gd" id="1_v7hof"]
+[ext_resource type="PackedScene" uid="uid://lacicg4gj5xt" path="res://Scenes/paddle.tscn" id="2_w0fs1"]
+[ext_resource type="PackedScene" uid="uid://x4k02i1lj1e" path="res://Scenes/killzone.tscn" id="3_y37mc"]
+[ext_resource type="Script" uid="uid://do1m54t5yph2c" path="res://Scripts/blockManager.gd" id="4_sl2xg"]
+[ext_resource type="PackedScene" uid="uid://bfpmoeoe0288i" path="res://Scenes/block.tscn" id="5_w0fs1"]
+[ext_resource type="PackedScene" uid="uid://7c1aa0bec27e" path="res://Scenes/door.tscn" id="6_pyho3"]
+[ext_resource type="PackedScene" uid="uid://buinsl183a818" path="res://Scenes/sidebar.tscn" id="7_jshtj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vk57k"]
+
+[node name="level 1" type="Node2D"]
+script = ExtResource("1_v7hof")
+
+[node name="paddle" parent="." instance=ExtResource("2_w0fs1")]
+position = Vector2(356, 800)
+
+[node name="Ball Pool" type="Node" parent="." groups=["ball pool"]]
+
+[node name="Upgrade Pool" type="Node" parent="." groups=["upgrade pool"]]
+
+[node name="Walls" type="StaticBody2D" parent="." groups=["wall"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 407)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_vk57k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(354, 0)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_vk57k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(722, 397)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_vk57k")
+
+[node name="Killzone" parent="." instance=ExtResource("3_y37mc")]
+position = Vector2(358, 863)
+
+[node name="Block Manager" type="Node" parent="."]
+script = ExtResource("4_sl2xg")
+xPadding = 20.0
+yPadding = 20.0
+numberOfCollumns = 4
+numberOfRows = 4
+
+[node name="Block0" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(79.2017, 53.9622)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block1" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(79.2017, 125.548)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block2" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(79.2017, 197.134)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block3" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(79.2017, 268.721)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block4" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(268.067, 53.9622)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block5" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(268.067, 125.548)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block8" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(456.933, 53.9622)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block9" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(456.933, 125.548)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block12" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(645.798, 53.9622)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block13" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(645.798, 125.548)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block14" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(645.798, 197.134)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Block15" parent="Block Manager" instance=ExtResource("5_w0fs1")]
+position = Vector2(645.798, 268.721)
+scale = Vector2(1.52311, 1.52311)
+
+[node name="Door Manager" type="Node" parent="."]
+
+[node name="u" parent="Door Manager" instance=ExtResource("6_pyho3")]
+position = Vector2(359, 0)
+state = 0
+
+[node name="l" parent="Door Manager" instance=ExtResource("6_pyho3")]
+position = Vector2(0, 405)
+rotation = -1.5708
+state = 0
+
+[node name="r" parent="Door Manager" instance=ExtResource("6_pyho3")]
+position = Vector2(722, 405)
+rotation = 1.5708
+state = 2
+
+[node name="d" parent="Door Manager" instance=ExtResource("6_pyho3")]
+position = Vector2(359, 862)
+rotation = 3.14159
+state = 2
+destination_level = 39
+
+[node name="Sidebar" parent="." instance=ExtResource("7_jshtj")]
+
+[node name="LabelHint" type="Label" parent="."]
+z_index = 1
+offset_left = 139.0
+offset_top = 501.0
+offset_right = 604.0
+offset_bottom = 536.0
+theme_override_font_sizes/font_size = 25
+text = "HINT MESSAGE"
+horizontal_alignment = 1

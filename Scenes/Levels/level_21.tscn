@@ -221,6 +221,14 @@ health = 0
 position = Vector2(360, 188)
 upgradeType = 16
 
+[node name="Block2" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(55, 15)
+health = -5
+
+[node name="Block3" parent="Block Manager" instance=ExtResource("5_843ij")]
+position = Vector2(671, 15)
+health = -5
+
 [node name="Door Manager" type="Node" parent="."]
 
 [node name="Door2" parent="Door Manager" instance=ExtResource("6_hsrow")]

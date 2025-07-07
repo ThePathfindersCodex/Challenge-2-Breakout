@@ -42,7 +42,12 @@ var xp_rank:int=0
 var equip_slot1_enabled=false
 var equip_slot1=powerup_type.NONE
 
-enum hint_type {REACH_DOOR,TOGGLE_DOORS,UNLOCK_DOORS,GET_KEYS,BLAST_DOOR,BOMB_DOOR}
+var xp_points_rank_1 = 100
+var xp_points_rank_2 = 250
+var xp_points_rank_3 = 2000
+var xp_points_rank_4 = 5000
+
+enum hint_type {REACH_DOOR,TOGGLE_DOORS,UNLOCK_DOORS,GET_KEYS,BLAST_DOOR,BOMB_DOOR,TUNNEL_DOOR,FINAL_ROOM}
 var hintMessages: Array[String] = [
 "Move to the next room using the door.\nSPACE to Launch\nA and D to Move Paddle",
 "Use W key to open or close doors.",
@@ -50,6 +55,8 @@ var hintMessages: Array[String] = [
 "Collect 3 keys to unlock this door.",
 "Not sure how to open this door.",
 "How do I break these bricks?",
+"Something is strange about the left wall.",
+"FINAL ROOM!",
 ]
 var level_hints = {
 	"1": hint_type.REACH_DOOR,
@@ -59,6 +66,8 @@ var level_hints = {
 	"10": hint_type.GET_KEYS,
 	"19": hint_type.BLAST_DOOR,
 	"31": hint_type.BOMB_DOOR,
+	"25": hint_type.TUNNEL_DOOR,
+	"37": hint_type.FINAL_ROOM,
 }
 var hints_revealed = []
 
@@ -73,8 +82,8 @@ var map_rooms = [
 	[00,00,00,00,00,32,00,00,00,00,00,00],
 	[00,00,00,00,00,31,00,00,00,00,00,00],
 	[00,00,00,00,00,26,00,00,00,00,00,00],
-	[00,00,00,00,00,25,24,00,00,00,00,00],
-	[00,00,00,00,00,00,23,19,20,21,00,00],
+	[00,00,00,00,38,25,24,00,00,00,00,00],
+	[00,00,00,00,39,00,23,19,20,21,00,00],
 	[00,00,00,29,28,00,22,18,00,00,00,00],
 	[00,00,00,30,27,00,11,17,00,00,00,00],
 	[00,00,00,00,08,07,09,10,00,00,00,00],

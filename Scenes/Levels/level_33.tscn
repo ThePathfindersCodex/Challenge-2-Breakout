@@ -215,7 +215,6 @@ upgradeType = 1
 [node name="Block34" parent="Block Manager" instance=ExtResource("5_njc27")]
 position = Vector2(121.009, 184.458)
 scale = Vector2(0.263062, 0.263062)
-upgradeType = 1
 
 [node name="Block35" parent="Block Manager" instance=ExtResource("5_njc27")]
 position = Vector2(121.009, 191.823)
@@ -427,7 +426,6 @@ upgradeType = 4
 position = Vector2(282.003, 191.823)
 scale = Vector2(0.263062, 0.263062)
 health = 7
-upgradeType = 4
 
 [node name="Block78" parent="Block Manager" instance=ExtResource("5_njc27")]
 position = Vector2(282.003, 199.189)
@@ -620,7 +618,6 @@ upgradeType = 4
 position = Vector2(442.997, 191.823)
 scale = Vector2(0.263062, 0.263062)
 health = 7
-upgradeType = 4
 
 [node name="Block120" parent="Block Manager" instance=ExtResource("5_njc27")]
 position = Vector2(442.997, 199.189)
@@ -821,7 +818,6 @@ upgradeType = 1
 [node name="Block160" parent="Block Manager" instance=ExtResource("5_njc27")]
 position = Vector2(603.991, 184.458)
 scale = Vector2(0.263062, 0.263062)
-upgradeType = 1
 
 [node name="Block161" parent="Block Manager" instance=ExtResource("5_njc27")]
 position = Vector2(603.991, 191.823)

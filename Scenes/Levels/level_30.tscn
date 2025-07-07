@@ -297,7 +297,7 @@ health = 2
 [node name="@StaticBody2D@274430" parent="Block Manager" instance=ExtResource("5_6dyo3")]
 position = Vector2(271.527, 179.028)
 scale = Vector2(0.556408, 0.556408)
-upgradeType = 11
+upgradeType = 4
 
 [node name="@StaticBody2D@274431" parent="Block Manager" instance=ExtResource("5_6dyo3")]
 position = Vector2(271.527, 196.833)
@@ -391,7 +391,7 @@ health = 2
 [node name="@StaticBody2D@274466" parent="Block Manager" instance=ExtResource("5_6dyo3")]
 position = Vector2(453.473, 179.028)
 scale = Vector2(0.556408, 0.556408)
-upgradeType = 11
+upgradeType = 4
 
 [node name="@StaticBody2D@274467" parent="Block Manager" instance=ExtResource("5_6dyo3")]
 position = Vector2(453.473, 196.833)

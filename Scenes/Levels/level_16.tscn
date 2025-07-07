@@ -249,6 +249,7 @@ scale = Vector2(0.552571, 0.552571)
 [node name="Block137" parent="Block Manager" instance=ExtResource("5_a5g8x")]
 position = Vector2(416.345, 213.268)
 scale = Vector2(0.552571, 0.552571)
+health = -5
 
 [node name="Block138" parent="Block Manager" instance=ExtResource("5_a5g8x")]
 position = Vector2(416.345, 230.95)
@@ -384,7 +385,7 @@ health = -2
 position = Vector2(0, 405)
 rotation = -1.5708
 state = 2
-destination_level = 14
+destination_level = 13
 
 [node name="Door3" parent="Door Manager" instance=ExtResource("6_dumvq")]
 position = Vector2(722, 405)

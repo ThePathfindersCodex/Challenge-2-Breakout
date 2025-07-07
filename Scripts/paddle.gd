@@ -67,9 +67,13 @@ func reset():
 
 func grow():
 	scale *=1.1
+	scale.x=clamp(scale.x,0.5,2.0)
+	scale.y=clamp(scale.y,0.5,2.0)
 	
 func shrink():
 	scale *=0.9
+	scale.x=clamp(scale.x,0.5,2.0)
+	scale.y=clamp(scale.y,0.5,2.0)
 
 func equip_splitball():
 	# if needed for graphics adjustments
@@ -129,15 +133,27 @@ func activate_tunnelball():
 		if block.health > 0:
 			block.disableCollider()
 			block.sprite_2d_tunnel.visible=true
-	await get_tree().create_timer(3).timeout
+	
+	#show tunneldoors whle active
+	var doors = owner.doorManager.get_children()
+	for door in doors:
+		if door.unlock_type == 5:
+			door.visible=true
+
+	await get_tree().create_timer(1.5).timeout
 	tunnel_ball_active=false
 	for block in blocks:
-		if block.health > 0:
+		if block != null && block.health > 0:
 			block.enableCollider()
 			block.sprite_2d_tunnel.visible=false
-	
+			
+	#hide tunneldoors while inactive
+	for door in doors:
+		if door.unlock_type == 5:
+			door.visible=false
+			
 func activate_magnetball():
-	# 1 ball sticks to paddle, ready to relaunch - similar to NEW_BALL powerup
+	# 1 ball sticks to paddle, ready to relaunch - similar to NEW_BALL powerup - ball also turns toward open doors
 	magnet_ball_active=true
 	await get_tree().create_timer(5).timeout
 	magnet_ball_active=false

@@ -36,7 +36,7 @@ func explode():
 	for obj in checks:
 		if obj.is_in_group("block"):
 			if obj.health>0: # standard block
-				obj.blockHit()
+				obj.blockHit(null)
 			elif obj.health==-3: # bomb-only block
 				obj.destroy()
 	queue_free()

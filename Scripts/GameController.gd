@@ -7,29 +7,29 @@ var numberOfWallBlocks:int =0
 var numberOfZombieWallBlocks:int =0
 var sidebar:Node
 var blockManager:Node
+var doorManager:Node
 
 func _ready():
 	ballPool = get_tree().get_first_node_in_group("ball pool")
 	paddle = get_tree().get_first_node_in_group("paddle")
 	sidebar = $Sidebar
 	blockManager = $"Block Manager"
+	doorManager = $"Door Manager"
 	startGame()
 
 func countWallBlocks():
 	numberOfWallBlocks =0
-	var blocks = $"Block Manager".get_children()
+	var blocks = blockManager.get_children()
 	for block in blocks:
 		if block.health > 0:
 			numberOfWallBlocks +=1
-	#print(numberOfWallBlocks)
 
 func countZombieWallBlocks():
 	numberOfZombieWallBlocks =0
-	var blocks = $"Block Manager".get_children()
+	var blocks = blockManager.get_children()
 	for block in blocks:
 		if block.health == -4:
 			numberOfZombieWallBlocks +=1
-	#print(numberOfZombieWallBlocks)
 
 func _process(delta):
 	Global.playTime += delta
@@ -48,7 +48,7 @@ func checkDoors():
 	if(Input.is_action_just_pressed("toggle_doors")):
 		checkToggleDoors()
 		
-	var doors = $"Door Manager".get_children()
+	var doors = doorManager.get_children()
 	for door in doors:
 		if door.state == 1 && door.unlock_type==0:
 			countWallBlocks()
@@ -66,9 +66,13 @@ func checkDoors():
 			countZombieWallBlocks()
 			if(numberOfZombieWallBlocks ==0):
 				door.state = 2
+		elif door.unlock_type==5:
+			if !paddle.tunnel_ball_active:
+				door.visible=false
+				
 
 func checkToggleDoors():
-	var doors = $"Door Manager".get_children()
+	var doors = doorManager.get_children()
 	#0"exists": true/false,          # Does a neighboring room even exist?
 	#1"locked": true/false,          # Is this door currently locked?
 	#2"closed": true/false,          # Is this door currently closed? (but not locked)
@@ -77,35 +81,23 @@ func checkToggleDoors():
 	var unlocked_doors = []
 	var currently_open_index = -1
 	
-	# Step 1: Gather unlocked doors
 	for door in doors:
-		if door.state >= 2:  # Only unlocked doors (state 2 = closed, state 3 = open)
+		if door.state >= 2:
 			unlocked_doors.append(door)
 
-	# Step 2: Find which door (if any) is currently open
 	for i in range(unlocked_doors.size()):
 		if unlocked_doors[i].state == 3:
 			currently_open_index = i
 			break
 
-	# Step 3: Close all unlocked doors first
 	for door in unlocked_doors:
-		door.state = 2  # Close
-	
-	# Step 4: Advance the toggle state
-	# From all closed - open door 0
-	# From door 0 open - open door 1
-	# From door N open - open door N+1
-	# From last door open - back to all closed (nothing opens)
+		door.state = 2
 
 	if currently_open_index < unlocked_doors.size() - 1:
-		# Open next door in the cycle
 		unlocked_doors[currently_open_index + 1].state = 3
 	else:
-		# If no door was open, start cycle by opening the first door
 		if currently_open_index == -1 and unlocked_doors.size() > 0:
 			unlocked_doors[0].state = 3
-		# else: leave all closed (we already closed above)
 
 func checkEquipSlotActivation():
 	if(Input.is_action_just_pressed("activate_slot1")):
@@ -165,7 +157,7 @@ func floatingRisingText(msg,pos,speed,custom_scale:float):
 	label.position = pos
 	label.z_index=1
 	add_child(label)
-	# TODO should try using AnimationPlayer?
+
 	var duration=speed
 	var tween : Tween = self.create_tween()
 	tween.set_parallel()
@@ -175,7 +167,7 @@ func floatingRisingText(msg,pos,speed,custom_scale:float):
 	remove_child(label)
 	
 func checkBlockColliders():
-	var blocks = $"Block Manager".get_children()
+	var blocks = blockManager.get_children()
 	for block in blocks:
 		if block.health == -2 && Global.powerup_phaseball:
 			block.disableCollider()
@@ -183,42 +175,44 @@ func checkBlockColliders():
 func gainXP(amt:int):
 	floatingRisingText("+"+str(amt)+" XP",Vector2(674.0,100),1.5,1)
 	# level up effects	
-		#- 100 xp =  rank 1 - deal 1 extra damage per hits
-		#- 200 xp =  rank 2 - equipment slot activated
-		#- 800 xp =  rank 3 - reduce equipment cooldown - 5 seconds
-		#- 1500 xp =  rank 4 - reduce equipment cooldown - 5 seconds
-	if Global.xp_points < 2500:
-		Global.xp_points += amt
+		#- rank 1 - deal 1 extra damage per hits
+		#- rank 2 - equipment slot activated
+		#- rank 3 - reduce equipment cooldown - 5 seconds
+		#- rank 4 - reduce equipment cooldown - 5 seconds
+	Global.xp_points += amt
+	
+	# hardcode for test
+	#Global.equip_slot1_enabled = true
 
-		if Global.xp_points >= 2500:
-			if (Global.xp_rank<4):
-				floatingRisingText("RANK UP!\nCooldown Reduced\nMore",Vector2(70,400),3.5,4)
+	if Global.xp_points >= Global.xp_points_rank_4:
+		if (Global.xp_rank<4):
+			floatingRisingText("RANK UP!\nCooldown Reduced\nMore",Vector2(70,400),4.0,4)
 			Global.xp_rank = 4
-		elif Global.xp_points >= 1000:
-			if (Global.xp_rank<3):
-				floatingRisingText("RANK UP!\nCooldown Reduced",Vector2(70,400),3.5,4)
+	elif Global.xp_points >= Global.xp_points_rank_3:
+		if (Global.xp_rank<3):
+			floatingRisingText("RANK UP!\nCooldown Reduced",Vector2(70,400),4.0,4)
 			Global.xp_rank = 3
-		elif Global.xp_points >= 250:
-			if (Global.xp_rank<2):
-				floatingRisingText("RANK UP!\nItem Slot Activated",Vector2(70,400),3.5,4)
+	elif Global.xp_points >= Global.xp_points_rank_2:
+		if (Global.xp_rank<2):
+			floatingRisingText("RANK UP!\nItem Slot Activated",Vector2(70,400),4.0,4)
 			Global.xp_rank = 2
 			Global.equip_slot1_enabled = true
-		elif Global.xp_points >= 100:
-			if (Global.xp_rank<1):
-				floatingRisingText("RANK UP!\n+1 Damage",Vector2(200,400),3.5,4)
+	elif Global.xp_points >= Global.xp_points_rank_1:
+		if (Global.xp_rank<1):
+			floatingRisingText("RANK UP!\n+1 Damage",Vector2(200,400),4.0,4)
 			Global.xp_rank = 1
 	
 	updateSidebar()
 
 func startZombieBlockRespawnTimer(block,seconds):
-	$"Block Manager".remove_child(block)
+	blockManager.remove_child(block)
 	await get_tree().create_timer(seconds).timeout
-	$"Block Manager".add_child(block)
+	blockManager.add_child(block)
 	block.owner = self
 
 func performBlockHyperClear(trigger_block):
 	trigger_block.destroy()
-	var blocks = $"Block Manager".get_children()
+	var blocks = blockManager.get_children()
 	for block in blocks:
 		if block.health == 0:
 			block.destroy()

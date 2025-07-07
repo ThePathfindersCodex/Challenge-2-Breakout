@@ -312,13 +312,13 @@ position = Vector2(296.885, 334.679)
 rotation = 0.837758
 scale = Vector2(0.552571, 0.552571)
 health = 2
-upgradeType = 2
+upgradeType = 4
 
 [node name="Block107" parent="Block Manager" instance=ExtResource("5_pgop2")]
 position = Vector2(296.885, 352.361)
 rotation = 0.837758
 scale = Vector2(0.552571, 0.552571)
-upgradeType = 2
+upgradeType = 3
 
 [node name="Block111" parent="Block Manager" instance=ExtResource("5_pgop2")]
 position = Vector2(357.115, 104.81)
@@ -381,6 +381,7 @@ position = Vector2(357.115, 263.95)
 rotation = 0.837758
 scale = Vector2(0.552571, 0.552571)
 health = 4
+upgradeType = 11
 
 [node name="Block121" parent="Block Manager" instance=ExtResource("5_pgop2")]
 position = Vector2(357.115, 281.632)
@@ -413,7 +414,7 @@ position = Vector2(357.115, 352.361)
 rotation = 0.837758
 scale = Vector2(0.552571, 0.552571)
 health = 2
-upgradeType = 1
+upgradeType = 3
 
 [node name="Block129" parent="Block Manager" instance=ExtResource("5_pgop2")]
 position = Vector2(417.345, 104.81)

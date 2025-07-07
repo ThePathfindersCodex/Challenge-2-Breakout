@@ -146,7 +146,7 @@ upgradeType = 1
 [node name="Block22" parent="Block Manager" instance=ExtResource("5_2yhbx")]
 position = Vector2(201.389, 97.1538)
 scale = Vector2(0.774573, 0.774573)
-upgradeType = 1
+upgradeType = 3
 
 [node name="Block24" parent="Block Manager" instance=ExtResource("5_2yhbx")]
 position = Vector2(201.389, 138.981)
@@ -273,7 +273,7 @@ upgradeType = 1
 [node name="Block58" parent="Block Manager" instance=ExtResource("5_2yhbx")]
 position = Vector2(523.611, 97.1538)
 scale = Vector2(0.774573, 0.774573)
-upgradeType = 1
+upgradeType = 3
 
 [node name="Block60" parent="Block Manager" instance=ExtResource("5_2yhbx")]
 position = Vector2(523.611, 138.981)

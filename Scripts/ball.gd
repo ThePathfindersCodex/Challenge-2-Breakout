@@ -19,20 +19,32 @@ func _ready() -> void:
 		enable_powerup_doorbusterball()
 	
 	paddle = get_tree().get_first_node_in_group("paddle")
-	paddle.hyper_ball_active=false
-	paddle.tunnel_ball_active=false
-	paddle.magnet_ball_active=false
-		
+	
 func launch(launchVector:Vector2):
 	velocity = launchVector *speed
 	active = true
 	
+func play_bounce():
+	%AudioBallBounce.play()
+	
+func play_break():
+	%AudioBrickBreak.play()
+
+func play_paddle():
+	%AudioPaddleHit.play()
+	
 func _process(delta):
 	if(active):
+		
+		if(paddle.magnet_ball_active):
+			# slightly adjust ball movement towards the first open door
+			turn_towards_open_door(delta)
+
 		var collision = move_and_collide(velocity*delta)
 		if(collision):
 			
 			if(collision.get_collider().is_in_group("paddle")):
+				play_paddle()
 				wall_taps=0 # reset wallhits
 			
 			if(collision.get_collider().is_in_group("door")):
@@ -43,9 +55,16 @@ func _process(delta):
 			velocity = velocity.bounce(collision.get_normal())
 			if(collision.get_collider().is_in_group("block")):
 				wall_taps=0# reset wallhits
-				collision.get_collider().blockHit()
+				collision.get_collider().blockHit(self)
+
+			if(collision.get_collider().is_in_group("paddle") && paddle.magnet_ball_active):
+				# stick newball to paddle and destroy original
+				paddle.prepareBall()
+				paddle.magnet_ball_active=false
+				destroy()
 
 			if(collision.get_collider().is_in_group("wall")):
+				play_bounce()
 				wall_taps +=1 
 				if (wall_taps > 5): # num of wall hits before increase speed
 					if velocity.length() < 1100: # max speed cutoff
@@ -70,7 +89,7 @@ func enable_powerup_doorbusterball():
 
 func triple():
 	if active:
-		if ballPool.get_children().size() < 36:
+		if ballPool.get_children().size() < 21:
 			var offsetAngle = 15
 			var currentVector = velocity.normalized()
 			var leftBallVector = currentVector.rotated(deg_to_rad(-offsetAngle))
@@ -103,6 +122,8 @@ func activate_microball():
 func microsize():
 	var old_scale=scale
 	scale *= .4
+	scale.x=clamp(scale.x,0.25,2.0)
+	scale.y=clamp(scale.y,0.25,2.0)
 	return old_scale
 func revertsize(original_scale):
 	scale = original_scale
@@ -120,6 +141,8 @@ func activate_hyperball():
 func macrosize():
 	var old_scale=scale
 	scale *= 1.5
+	scale.x=clamp(scale.x,0.25,2.0)
+	scale.y=clamp(scale.y,0.25,2.0)
 	return old_scale
 func increase_speed():
 	var old_speed=velocity.length()
@@ -129,3 +152,20 @@ func revertspeed(original_speed):
 	if original_speed != 0:
 		velocity = velocity.normalized() * original_speed
 	
+func turn_towards_open_door(_delta):
+	var doors = ballPool.owner.doorManager.get_children()
+	var target_door
+	for door in doors:
+		if door.state == 3:
+			target_door=door
+			break
+	if target_door != null:
+		#print(velocity)
+		var target_pos = target_door.position
+		var direction_to_target = (target_pos - position).normalized()
+		var turn_strength = 0.01
+		var new_direction = velocity.normalized().lerp(direction_to_target, turn_strength).normalized()
+		# Keep original speed magnitude
+		var new_speed = velocity.length()
+		velocity = new_direction * new_speed
+		#print(velocity)

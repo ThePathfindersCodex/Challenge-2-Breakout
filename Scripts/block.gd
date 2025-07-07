@@ -62,7 +62,7 @@ func updatePowerUp(newPowerUp):
 		powerupSprite.visible = true
 		powerupSprite.texture = load(Global.texturePaths[upgradeType])
 		
-func blockHit():
+func blockHit(collider):
 	var paddle = get_tree().get_first_node_in_group("paddle")
 	if(health >0):
 		var dmg=1
@@ -74,7 +74,11 @@ func blockHit():
 			dmg+=1
 		update(health-dmg)
 		if health<=0:
+			if collider != null && collider.has_method("play_break"):
+				collider.play_break()
 			destroy()
+		else:
+			%AudioBrickDamage.play()
 			
 	# strong brick
 	if (health==-1 && Global.powerup_powerball):

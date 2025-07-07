@@ -17,8 +17,9 @@ extends StaticBody2D
   #2"collect3keys": , # collecting the third key will unlock this
   #3"blastdoor": , # use DoorBuster upgrade to hit the door 3 times to unlock
   #4"zombie": , # all zombie blocks must be destroyed to unlock
+  #5"tunnel": , # door is only visible while tunnelball is active
 #}
-@export_range(0,4) var unlock_type = 0 :set = update_unlock_type
+@export_range(0,5) var unlock_type = 0 :set = update_unlock_type
 
 @export var destination_level :int= 0
 
@@ -68,7 +69,10 @@ func update_unlock_type(newUnlockType):
 		$Sprite2DLock1.visible=false
 		$Sprite2DLock2.visible=true
 		$Sprite2DLock3.visible=false
-		
+	elif newUnlockType == 5:
+		for lock in locks:
+			lock.visible = false
+			
 	update_locks()
 	
 func update_locks():
@@ -106,11 +110,17 @@ func update_locks():
 				lock.visible = false
 		
 func doorHit():
-	if state==1 && unlock_type==3 && Global.powerup_doorbusterball:
-		blastdoor_hits += 1
-		#print(blastdoor_hits)
-		update_locks()
+	%AudioBallBounce.play()
 	
-	if (state<3):
-		return
-	Global.call_deferred("goToLevel",str(destination_level))
+	if unlock_type==5 and visible:
+		Global.call_deferred("goToLevel",str(destination_level))
+	else:
+		if state==1 && unlock_type==3 && Global.powerup_doorbusterball:
+			blastdoor_hits += 1
+			#print(blastdoor_hits)
+			update_locks()
+
+		if (state<3):
+			return
+		
+		Global.call_deferred("goToLevel",str(destination_level))

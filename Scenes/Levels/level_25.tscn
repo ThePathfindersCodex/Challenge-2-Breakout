@@ -150,7 +150,9 @@ scale = Vector2(1.29464, 1.29464)
 [node name="Door2" parent="Door Manager" instance=ExtResource("6_xb53o")]
 position = Vector2(0, 405)
 rotation = -1.5708
-state = 0
+state = 3
+unlock_type = 5
+destination_level = 38
 
 [node name="Door3" parent="Door Manager" instance=ExtResource("6_xb53o")]
 position = Vector2(722, 405)

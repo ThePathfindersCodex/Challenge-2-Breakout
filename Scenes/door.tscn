@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://7c1aa0bec27e"]
+[gd_scene load_steps=15 format=3 uid="uid://7c1aa0bec27e"]
 
 [ext_resource type="Script" uid="uid://wo2xfxn2s7s1" path="res://Scripts/door.gd" id="1_fahql"]
 [ext_resource type="Shader" uid="uid://bwoj1vuij7438" path="res://shaders/door.gdshader" id="2_a43ba"]
 [ext_resource type="Texture2D" uid="uid://edy4qpbya6nc" path="res://Sprites/triple powerup.png" id="3_a43ba"]
 [ext_resource type="Shader" uid="uid://d2upca68xxqab" path="res://shaders/door_lock.gdshader" id="4_ab4ky"]
+[ext_resource type="AudioStream" uid="uid://j7aucsjkvrw5" path="res://Sounds/Ball bounce.ogg" id="5_a43ba"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fahql"]
 resource_local_to_scene = true
@@ -83,3 +84,8 @@ material = SubResource("ShaderMaterial_ab4ky")
 position = Vector2(32, 2)
 scale = Vector2(0.75, 0.75)
 texture = SubResource("CompressedTexture2D_ovubi")
+
+[node name="AudioBallBounce" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_a43ba")
+volume_db = -8.0

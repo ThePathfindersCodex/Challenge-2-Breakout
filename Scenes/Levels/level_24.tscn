@@ -72,7 +72,6 @@ scale = Vector2(0.533873, 0.533873)
 [node name="Block26" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(88.623, 181.865)
 scale = Vector2(0.533873, 0.533873)
-upgradeType = 1
 
 [node name="Block27" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(88.623, 201.619)
@@ -90,6 +89,7 @@ scale = Vector2(0.533873, 0.533873)
 [node name="Block33" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(88.623, 538.138)
 scale = Vector2(0.533873, 0.533873)
+health = 5
 
 [node name="Block34" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(88.623, 557.892)
@@ -131,7 +131,6 @@ upgradeType = 1
 [node name="Block45" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(149.485, 201.619)
 scale = Vector2(0.533873, 0.533873)
-upgradeType = 1
 
 [node name="Block46" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(149.485, 439.372)
@@ -172,18 +171,22 @@ scale = Vector2(0.533873, 0.533873)
 [node name="Block60" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(210.346, 142.359)
 scale = Vector2(0.533873, 0.533873)
+health = 3
 
 [node name="Block61" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(210.346, 162.112)
 scale = Vector2(0.533873, 0.533873)
+health = 3
 
 [node name="Block62" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(210.346, 181.865)
 scale = Vector2(0.533873, 0.533873)
+health = 4
 
 [node name="Block63" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(210.346, 201.619)
 scale = Vector2(0.533873, 0.533873)
+health = 4
 
 [node name="Block64" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(210.346, 439.372)
@@ -224,18 +227,22 @@ scale = Vector2(0.533873, 0.533873)
 [node name="Block78" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(271.208, 142.359)
 scale = Vector2(0.533873, 0.533873)
+health = 3
 
 [node name="Block79" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(271.208, 162.112)
 scale = Vector2(0.533873, 0.533873)
+health = 3
 
 [node name="Block80" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(271.208, 181.865)
 scale = Vector2(0.533873, 0.533873)
+health = 4
 
 [node name="Block81" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(271.208, 201.619)
 scale = Vector2(0.533873, 0.533873)
+health = 4
 
 [node name="Block82" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(271.208, 439.372)
@@ -273,7 +280,6 @@ upgradeType = 1
 [node name="Block95" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(332.069, 122.605)
 scale = Vector2(0.533873, 0.533873)
-upgradeType = 1
 
 [node name="Block96" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(332.069, 142.359)
@@ -290,6 +296,7 @@ scale = Vector2(0.533873, 0.533873)
 [node name="Block99" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(332.069, 201.619)
 scale = Vector2(0.533873, 0.533873)
+upgradeType = 4
 
 [node name="Block100" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(332.069, 439.372)
@@ -329,7 +336,6 @@ upgradeType = 1
 [node name="Block113" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(392.931, 122.605)
 scale = Vector2(0.533873, 0.533873)
-upgradeType = 1
 
 [node name="Block114" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(392.931, 142.359)
@@ -389,18 +395,22 @@ scale = Vector2(0.533873, 0.533873)
 [node name="Block132" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(453.792, 142.359)
 scale = Vector2(0.533873, 0.533873)
+health = 3
 
 [node name="Block133" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(453.792, 162.112)
 scale = Vector2(0.533873, 0.533873)
+health = 3
 
 [node name="Block134" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(453.792, 181.865)
 scale = Vector2(0.533873, 0.533873)
+health = 4
 
 [node name="Block135" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(453.792, 201.619)
 scale = Vector2(0.533873, 0.533873)
+health = 4
 
 [node name="Block136" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(453.792, 439.372)
@@ -441,18 +451,22 @@ scale = Vector2(0.533873, 0.533873)
 [node name="Block150" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(514.654, 142.359)
 scale = Vector2(0.533873, 0.533873)
+health = 3
 
 [node name="Block151" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(514.654, 162.112)
 scale = Vector2(0.533873, 0.533873)
+health = 3
 
 [node name="Block152" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(514.654, 181.865)
 scale = Vector2(0.533873, 0.533873)
+health = 4
 
 [node name="Block153" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(514.654, 201.619)
 scale = Vector2(0.533873, 0.533873)
+health = 4
 
 [node name="Block154" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(514.654, 439.372)
@@ -506,7 +520,6 @@ upgradeType = 1
 [node name="Block171" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(575.515, 201.619)
 scale = Vector2(0.533873, 0.533873)
-upgradeType = 1
 
 [node name="Block172" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(575.515, 439.372)
@@ -555,7 +568,6 @@ scale = Vector2(0.533873, 0.533873)
 [node name="Block188" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(636.377, 181.865)
 scale = Vector2(0.533873, 0.533873)
-upgradeType = 1
 
 [node name="Block189" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(636.377, 201.619)
@@ -573,6 +585,7 @@ scale = Vector2(0.533873, 0.533873)
 [node name="Block195" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(636.377, 538.138)
 scale = Vector2(0.533873, 0.533873)
+health = 5
 
 [node name="Block196" parent="Block Manager" instance=ExtResource("5_fenna")]
 position = Vector2(636.377, 557.892)
