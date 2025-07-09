@@ -124,3 +124,8 @@ func doorHit():
 			return
 		
 		Global.call_deferred("goToLevel",str(destination_level))
+
+func enableCollider():
+	$CollisionShape2D.disabled=false
+func disableCollider():
+	$CollisionShape2D.disabled=true

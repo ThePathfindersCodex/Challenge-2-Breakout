@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://civl51qm452vx"]
+[gd_scene load_steps=9 format=3 uid="uid://civl51qm452vx"]
 
 [ext_resource type="Script" uid="uid://ybg62ubgnipt" path="res://Scripts/GameController.gd" id="1_hvdc6"]
 [ext_resource type="PackedScene" uid="uid://lacicg4gj5xt" path="res://Scenes/paddle.tscn" id="2_iv8rj"]
 [ext_resource type="PackedScene" uid="uid://x4k02i1lj1e" path="res://Scenes/killzone.tscn" id="3_eors4"]
 [ext_resource type="Script" uid="uid://do1m54t5yph2c" path="res://Scripts/blockManager.gd" id="4_fp5fn"]
 [ext_resource type="PackedScene" uid="uid://bfpmoeoe0288i" path="res://Scenes/block.tscn" id="5_iv8rj"]
-[ext_resource type="Script" uid="uid://bt0voyptlci0y" path="res://Scripts/block.gd" id="6_eors4"]
 [ext_resource type="PackedScene" uid="uid://7c1aa0bec27e" path="res://Scenes/door.tscn" id="6_nglvj"]
 [ext_resource type="PackedScene" uid="uid://buinsl183a818" path="res://Scenes/sidebar.tscn" id="7_0c7ws"]
 
@@ -48,132 +47,108 @@ yPadding = 50.0
 numberOfCollumns = 10
 numberOfRows = 10
 
-[node name="Block4" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block4" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(25.302, 212.695)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block5" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block5" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(25.302, 250.161)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block6" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block6" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(25.302, 287.628)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 health = 5
 
-[node name="Block14" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block14" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(100.235, 212.695)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block15" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block15" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(100.235, 250.161)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block16" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block16" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(100.235, 287.628)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 health = 5
 
-[node name="Block34" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block34" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(250.101, 212.695)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block35" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block35" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(250.101, 250.161)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block36" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block36" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(250.101, 287.628)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 health = 5
 
-[node name="Block44" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block44" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(325.034, 212.695)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block45" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block45" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(325.034, 250.161)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block46" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block46" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(325.034, 287.628)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 health = 5
 
-[node name="Block54" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block54" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(399.966, 212.695)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block55" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block55" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(399.966, 250.161)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block56" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block56" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(399.966, 287.628)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 health = 5
 
-[node name="Block64" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block64" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(474.899, 212.695)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block65" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block65" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(474.899, 250.161)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block66" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block66" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(474.899, 287.628)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 health = 5
 
-[node name="Block84" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block84" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(624.765, 212.695)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block85" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block85" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(624.765, 250.161)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block86" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block86" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(624.765, 287.628)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 health = 5
 
-[node name="Block94" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block94" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(699.698, 212.695)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block95" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block95" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(699.698, 250.161)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 
-[node name="Block96" type="StaticBody2D" parent="Block Manager" groups=["block"] instance=ExtResource("5_iv8rj")]
+[node name="Block96" parent="Block Manager" instance=ExtResource("5_iv8rj")]
 position = Vector2(699.698, 287.628)
 scale = Vector2(0.486577, 0.486577)
-script = ExtResource("6_eors4")
 health = 5
 
 [node name="Door Manager" type="Node" parent="."]

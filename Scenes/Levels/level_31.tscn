@@ -553,6 +553,7 @@ destination_level = 26
 
 [node name="Door4" parent="Door Manager" instance=ExtResource("6_wyibq")]
 position = Vector2(359, 0)
+state = 2
 destination_level = 32
 
 [node name="Sidebar" parent="." instance=ExtResource("7_xwgu4")]

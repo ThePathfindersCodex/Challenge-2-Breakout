@@ -138,6 +138,7 @@ func activate_tunnelball():
 	var doors = owner.doorManager.get_children()
 	for door in doors:
 		if door.unlock_type == 5:
+			door.enableCollider()
 			door.visible=true
 
 	await get_tree().create_timer(1.5).timeout
@@ -150,6 +151,7 @@ func activate_tunnelball():
 	#hide tunneldoors while inactive
 	for door in doors:
 		if door.unlock_type == 5:
+			door.disableCollider()
 			door.visible=false
 			
 func activate_magnetball():

@@ -146,7 +146,7 @@ func macrosize():
 	return old_scale
 func increase_speed():
 	var old_speed=velocity.length()
-	velocity *= 2.0
+	velocity *= 1.3
 	return old_speed
 func revertspeed(original_speed):
 	if original_speed != 0:

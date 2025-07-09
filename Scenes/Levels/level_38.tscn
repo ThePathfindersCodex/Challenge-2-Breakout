@@ -110,6 +110,7 @@ state = 0
 position = Vector2(722, 405)
 rotation = 1.5708
 state = 2
+destination_level = 25
 
 [node name="d" parent="Door Manager" instance=ExtResource("6_pyho3")]
 position = Vector2(359, 862)

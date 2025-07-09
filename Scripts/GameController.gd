@@ -42,6 +42,12 @@ func checkDebug():
 		get_tree().call_group("block","destroy")
 	if(Input.is_action_just_pressed("debug_full_life")):
 		Global.lives_remaining=3
+		gainXP(999)
+		gainXP(999)
+		gainXP(999)
+		gainXP(999)
+		#Global.equip_slot1=Global.powerup_type.HYPERBALL
+		Global.equip_slot1=Global.powerup_type.SPLITBALL
 		updateSidebar()
 	
 func checkDoors():
@@ -69,6 +75,7 @@ func checkDoors():
 		elif door.unlock_type==5:
 			if !paddle.tunnel_ball_active:
 				door.visible=false
+				door.disableCollider()
 				
 
 func checkToggleDoors():
